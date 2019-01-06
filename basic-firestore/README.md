@@ -1,4 +1,4 @@
-# Basic Firestore + Vuefire example
+# Basic Vuefire + Firestore example
 
 Example using CDN links
 

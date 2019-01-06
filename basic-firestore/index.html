@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Basic Vuefire + Firestore example</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-firestore.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/2.0.0-alpha.20/vuefire.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input
+        v-model.trim="newTodoText"
+        @keyup.enter="addTodo"
+        placeholder="Add new todo"
+      />
+      <ul>
+        <li v-for="todo in todos">
+          <input
+            :value="todo.text"
+            @input="updateTodoText(todo, $event.target.value)"
+          />
+          <button @click="removeTodo(todo)">X</button>
+        </li>
+      </ul>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
